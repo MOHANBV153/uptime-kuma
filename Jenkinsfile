@@ -20,7 +20,7 @@ pipeline{
         }
         stage('sonarqube analysis'){
             steps{
-                withSonarQubeEnv('Sonar-token'){
+                withSonarQubeEnv('sonar-server'){
                     sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Uptime \
                     -Dsonar.projectKey=Uptime '''
                 }
