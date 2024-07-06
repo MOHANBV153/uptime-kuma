@@ -68,7 +68,7 @@ pipeline{
         }
         stage('Deploy to Container'){
             steps{
-                sh docker run -d --name Uptime -v /var/run/docker.sock:/var/run/docker.sock -p 3001:3001 monishdockerhub/Uptime:latest 
+                sh 'docker run -d --name Uptime -v /var/run/docker.sock:/var/run/docker.sock -p 3001:3001 monishdockerhub/Uptime:latest' 
             }            
         }
     }
